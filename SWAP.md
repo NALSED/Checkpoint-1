@@ -29,52 +29,56 @@
 
 #### Formater les disques
 
-    mkfs.ext4 -L PARTITION1 /dev/sdb1
-![6 formater et renommer les partition](https://github.com/user-attachments/assets/3bb6c204-05b3-47d7-91e6-b10dd4afc98e)
+    mkfs.ext4 -L DATA /dev/sdb1
+    
+![ext4](https://github.com/user-attachments/assets/e4b9fcdd-42ed-46ea-b083-a433286639fa)
 
-    mkswap -L- SWAP
+
+    mkswap -L- SWAP /dev/sdb2
  
  ![7 swap](https://github.com/user-attachments/assets/d2e1957c-1e70-4c4f-814f-c5d78f168c7b)
-
-
-#### Obtenir les UUID des partitions
-
-    lsblk -f 
-![8 UUID](https://github.com/user-attachments/assets/25783996-e7b7-46db-85f6-7797dd5aa6e3)
 
 
 #### Changer le partitionnement des disque entre sda5 et sdb2
     
     swapoff /dev/sda5
     swapon /dev/sdb2
-![9swap of swap on](https://github.com/user-attachments/assets/f5776b04-9ce7-4fbd-8ee1-0cbfec0bbb2a)
+
+![swap off swapon](https://github.com/user-attachments/assets/bfd3c2fd-ed2a-467b-92fc-d82e2b1b6f0a)
 
 
-#### Monter le disque dans l'arborécence.
 
-    mkdir /mnt/montage
+#### Créer un point de montage.
+
+    mkdir /mnt/partitions
 
 #### Monter sdb1 et vérif
         
-        mount /dev/sdb1 /mnt/backup
+        mount /dev/sdb1 /mnt/partitions
 
- ![10 montage et vérif](https://github.com/user-attachments/assets/1bd58575-7117-44d9-9325-c31b964f4494)
+ ![montage](https://github.com/user-attachments/assets/cb3ea2dc-94f9-4a91-9a7d-e05a2638e5d1)
 
 
 #### Récuppérer les UUID, vérif et édition 
 
-     blkid | grep LABEL >> /etc/fstab   
-    nano /etc/fstab
-    
-    ![11verif UUID ((les pointer))](https://github.com/user-attachments/assets/55d29889-2b59-48cc-a814-20ef715581a5)
+             blkid | grep LABEL >> /etc/fstab   
+            nano /etc/fstab
 
-####Edition des deux partition
+
+
+#### Edition des deux partition
 * ##### commenter le 1er swap
 * ##### renseigner les UUID récupérés précédement, le point de montage et defaults( voir capture ci dessous)
- ![12 voila](https://github.com/user-attachments/assets/d110bd8b-52e0-438b-959b-8f7cc75e601d)
+ 
+ ![finiiiiii](https://github.com/user-attachments/assets/4ff550e9-9d7e-4860-b8ff-cc8708a78502)
 
 #### Verifier le point de montage
-J'ai un messaage d'erreur....
+
+        mount-a
+        lsblk
+
+
+![fin](https://github.com/user-attachments/assets/eea76c61-35c3-4ac4-9f1a-d778b0930719)
 
 
 
