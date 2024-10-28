@@ -1,6 +1,6 @@
-1 passwd
+1 /etc/passwd
 
-2 chmod
+2 chown 744 myfile
 
 3 "git init" puis "git add" puis "git push"  
 
