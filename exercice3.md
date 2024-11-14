@@ -14,13 +14,8 @@ puis au moment de créer le commit
    git commit               
    git push origin main      
    
-5 * Copie le texte dans un fichier sans le modifier
-  * rajoute \n devant toutes les lignes sauf la 1ère
-  * ensuite tu appuies sur la touche retour <-- devant toutes les lignes pour que tout le texte tienne en une ligne
-  * ensuite tu mets tout ce texte entre simple quotes ''
-  * ensuite, tu rajoutes la commande echo -e devant ton texte entre simple quotes
-  * N'oubli pas que pour apparaisse dans ta sortie de commande les \\ il faut en rajouter un 3ème devant
-  *  enfin, copie tout ça dans le terminal
+5 echo -e 'Malgré le prix élevé de 100$, il a dit "Bonjour !" au vendeur :\n- "Bonjour est-ce que ce clavier fonctionne bien ?"\n- "Evidemment ! On peut tout écrire avec, que ce soit des pipe | ou bien des backslash \\\\ !"\n- "Même des tildes ~ ?"\n- "Evidemment !"'
+
  
  
  6 La commande fg %1
